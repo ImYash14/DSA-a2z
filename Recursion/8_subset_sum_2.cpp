@@ -3,8 +3,11 @@
 using namespace std;
 
 void fun1(int index,vector<int>&ds, vector<vector<int>>&ans,vector<int>&arr, int n){
-   ans.push_back(ds);
-
+     ans.push_back(ds);
+    //initially pushes the empty subset and later on all the subsets
+    //here no need of base case
+    //so no need to pop back because no returning
+    //and we will be going level by level(level0,0-size subsets), (level1,1-size subsets),etc
     for (int i = index; i < n; i++)
     {
         if(i>index && arr[i] == arr[i-1]) continue;//for avoiding duplicate
@@ -12,7 +15,8 @@ void fun1(int index,vector<int>&ds, vector<vector<int>>&ans,vector<int>&arr, int
         ds.push_back(arr[i]);
         
         fun1(i+1,ds,ans,arr,n);
-        //while returning
+        //this pop will be not for the returning
+        //instead for moving from index to n for each level
         ds.pop_back();
     }
     

@@ -5,6 +5,7 @@ using namespace std;
 void fun2(int index, vector<vector<int>>&ans,vector<int>&arr, int n){
     if(index == n){
         ans.push_back(arr);
+        return;
     }
 
     for (int i = index; i < n; i++)
