@@ -2,6 +2,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//brute is recursion
 string optimal(int n, int k){
     //step1->find factorial and store the numbers
     int fact =1;
