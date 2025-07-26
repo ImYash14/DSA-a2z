@@ -16,7 +16,7 @@ int floor(vector<int>&arr, int n, int num){
             high = mid -1;
         }
     }
-    return ans;
+    return ans; //we can also return high if index is asked
 }
 
 int ceil(vector<int>&arr, int n, int num){
