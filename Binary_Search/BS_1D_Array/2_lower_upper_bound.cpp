@@ -16,7 +16,7 @@ int lowerBound(vector<int>&arr, int n, int target){
             low = mid+1;
         }
     }
-    return ans;
+    return ans; //can also return low as well
 }
 
 int upperBound(vector<int>&arr, int n, int target){
