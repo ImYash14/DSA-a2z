@@ -22,8 +22,8 @@ int optimal(vector<int> &arr, int n, int target){
         int mid = (low+high)/2;
         if(arr[mid] == target) return mid;
         
-        //if left sorted
-        else if(arr[low] <= arr[mid] && arr[mid] >= arr[high]){
+        //if left half sorted
+        else if(arr[low] <= arr[mid]){
             //check if target lies in this half
             if(arr[low]<=target && target<=arr[mid]){
                 
@@ -34,7 +34,7 @@ int optimal(vector<int> &arr, int n, int target){
             }
         }
 
-        //if right sorted
+        //if right half sorted (arr[mid]<= arr[high])
         else{
             //check if target lies in this half
             if(arr[mid]<=target && target<=arr[high]){
