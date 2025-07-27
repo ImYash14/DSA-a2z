@@ -20,42 +20,6 @@ void reverse(string &s){
         high--;
     }
 }
-string infix2postfix(string s){
-    int i=0;
-    stack<char>st;
-    string ans = "";
-    while(i<s.size()){
-        //for the operands
-        if((s[i] >= 'A' && s[i] <= 'Z') || (s[i] >= 'a' && s[i] <='z') || (s[i] >= '0' && s[i] <='9')){
-            ans = ans + s[i];
-        }
-        else if(s[i] == '('){
-            st.push(s[i]);
-        }
-        else if(s[i] == ')'){
-            while(!s.empty() && st.top()!= '('){
-                ans = ans + st.top();
-                st.pop();
-            }
-            st.pop();//pop the '('
-        }
-
-        //for the operators
-        else{
-            while(!st.empty() && priority(s[i]) <= priority(st.top())){
-                ans = ans + st.top();
-                st.pop();
-            }
-            st.push(s[i]); //if priority of s[i] > st.top()
-        }
-        i++;
-    }
-    while(!st.empty()){
-        ans = ans + st.top();
-        st.pop();
-    }
-    return ans;
-}
 
 string infix2prefix(string s){
     //step1->reverse the infix expression
@@ -120,7 +84,6 @@ int main()
     cout<<"enter the infix expression: ";
     cin>>s;
 
-    // cout<<infix2postfix(s);
     cout<<infix2prefix(s);
 
     return 0;
