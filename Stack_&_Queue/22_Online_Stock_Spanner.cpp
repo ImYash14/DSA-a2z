@@ -55,10 +55,34 @@ class OptimizedStockSpanner{
     }
 };
 
+class optimalStockSpan{
+    stack<pair<int,int>>st; //<price,days>
+    public:
+    vector<int>arr;
+
+    optimalStockSpan(){
+        
+    }
+
+    int next(int val){
+        arr.push_back(val);
+        int days =1;
+        
+        while(!st.empty() && st.top().first <= val){
+            days = days + st.top().second;
+            st.pop();
+        }
+        st.push({val,days});
+        
+        return days;
+    }
+};
+
 int main()
 {
     // StockSpanner s;
-    OptimizedStockSpanner s;
+    // OptimizedStockSpanner s;
+    optimalStockSpan s;
     cout<<s.next(7)<<endl;
     cout<<s.next(2)<<endl;
     cout<<s.next(1)<<endl;
