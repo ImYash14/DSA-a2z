@@ -68,7 +68,7 @@ class optimalStockSpan{
         arr.push_back(val);
         int days =1;
         
-        while(!st.empty() && st.top().first <= val){
+        while(!st.empty() && st.top().first <= val){//because we need to find the previous greater price
             days = days + st.top().second;
             st.pop();
         }
