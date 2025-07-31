@@ -102,6 +102,7 @@ double optimal(vector<int>&arr1,int n1, vector<int>&arr2, int n2){
     }
     return 0;
 }
+
 int main()
 {
     int n1;
