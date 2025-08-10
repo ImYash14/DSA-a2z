@@ -26,11 +26,17 @@ node* insertinBST(node*root, int val){
     while(true){
         if(temp->data <= val){ //we have to go on right
             if(temp->right != NULL) temp = temp->right;
-            else temp->right = new node(val);
+            else {
+                temp->right = new node(val);
+                break;
+            }
         }
         else{//we have to go on left
             if(temp->left != NULL) temp = temp->left;
-            else temp->left = new node(val);
+            else {
+                temp->left = new node(val);
+                break;
+            }
         }
     }
     return root;
