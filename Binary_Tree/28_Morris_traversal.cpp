@@ -68,11 +68,15 @@ vector<int> morrispreorder(node*root){
             while(temp->right != NULL && temp->right != curr){
                 temp = temp->right;
             }
+
+            //if there is no thread,connect the rightmost node on left to curr
+            //and move to left, while doing this add to the ans because preorder(root left right)
             if(temp->right == NULL){
                 temp->right = curr;
                 ans.push_back(curr->data);
                 curr = curr->left;
             }
+             //if there is already a thread, then remove it and move right
             else if(temp->right == curr){
                 temp->right = NULL;
                 curr = curr->right;
