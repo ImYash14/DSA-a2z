@@ -41,7 +41,7 @@ vector<int> dijkstraUsingSet(int src,vector<vector<pair<int,int>>>&adj){
     dist[src] = 0;
 
     while(!st.empty()){
-        auto it = *(st.begin()); //gives te address of top
+        auto it = *(st.begin()); //gives the address of top
         int d = it.first;
         int node = it.second;
         st.erase(it);
